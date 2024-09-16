@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "74524583053",
+    "project_id": "sih2024-b3d0b",
+    "storage_bucket": "sih2024-b3d0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74524583053:android:9b772f5cbe6d026cb56ec4",
+        "android_client_info": {
+          "package_name": "com.example.sih2024"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEZOuNjXgaVeIi5-hZVYoKVQbL0EPJEXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74524583053:android:e98964a72c520a71b56ec4",
+        "android_client_info": {
+          "package_name": "com.example.sih_minecraft_24_20"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEZOuNjXgaVeIi5-hZVYoKVQbL0EPJEXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

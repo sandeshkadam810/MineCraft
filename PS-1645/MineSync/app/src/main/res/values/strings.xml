@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SIH_MINECRAFT_24_20</string>
+    <string name="retrieve_files" />
+    <string name="select_file" />
+    <string name="twice_select" />
+    <string name="upload_file" />
+    <string name="pdf_file_name" />
+</resources>
