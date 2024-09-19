@@ -6,7 +6,7 @@
 
 <h2>Problem Statements</h2>
 
-<h3>PS-1645 Features:</h3>
+<h3>PS-1645 Implemented Features till now:</h3>
 <ul>
     <li><strong>Firebase Login</strong>: Simple authentication system using Firebase.</li>
     <li><strong>QR Code Scan</strong>: Ability to scan QR codes.</li>
@@ -16,7 +16,7 @@
     <li><strong>Nearby Connections API</strong>: Peer-to-peer connections using Google's Nearby Connections API.</li>
 </ul>
 
-<h3>PS-1646 Features:</h3>
+<h3>PS-1646 Implemented Features till now:</h3>
 <ul>
     <li><strong>Firebase Login</strong>: Simple authentication system using Firebase.</li>
     <li><strong>Form to PDF Conversion</strong>: Input text in a form is converted into a PDF file.</li>
