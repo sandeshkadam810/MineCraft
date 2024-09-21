@@ -1,114 +1,92 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  TextEditingController usernameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [
-            Colors.blue,
-            Colors.red,
-          ],
-        ),
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: _page(),
-      ),
-    );
-  }
-
-  Widget _page() {
-    return Padding(
-      padding: const EdgeInsets.all(32.0),
-      child: Center(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _icon(),
+            // Logo and Name
+            Column(
+              children: [
+                Image.asset(
+                  'assets/images/logo.png', // Path to the image
+                  height: 200, // You can adjust the height based on your needs
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'MINESYNC',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.teal,
+                  ),
+                ),
+              ],
+            ),
             const SizedBox(height: 50),
-            _inputField("Username", usernameController),
+
+            // "Choose your role" text
+            const Text(
+              'Choose your role',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+                color: Colors.teal,
+              ),
+            ),
+            const SizedBox(height: 40),
+
+            // Admin Button
+            _roleButton(context, "Admin"),
             const SizedBox(height: 20),
-            _inputField("Password", passwordController, isPassword: true),
-            const SizedBox(height: 50),
-            _loginBtn(),
-            const SizedBox(height: 20),
-            _extraText(),
+
+            // Supervisor Button
+            _roleButton(context, "Supervisor"),
+
+            const SizedBox(height: 40),
+
+            // Login Options Text
+            GestureDetector(
+              onTap: () {
+                // Add action for login options if needed
+              },
+              child: const Text(
+                'Login Options',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.teal,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _icon() {
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.white, width: 2),
-        shape: BoxShape.circle,
-      ),
-      child: const Icon(Icons.person, color: Colors.white, size: 120),
-    );
-  }
-
-  Widget _inputField(String hintText, TextEditingController controller,
-      {bool isPassword = false}) {
-    var border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(18),
-      borderSide: const BorderSide(color: Colors.white),
-    );
-
-    return TextField(
-      style: const TextStyle(color: Colors.white),
-      controller: controller,
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.white),
-        enabledBorder: border,
-        focusedBorder: border,
-      ),
-      obscureText: isPassword,
-    );
-  }
-
-  Widget _loginBtn() {
-    return ElevatedButton(
+  Widget _roleButton(BuildContext context, String role) {
+    return ElevatedButton.icon(
       onPressed: () {
-        debugPrint("Username : " + usernameController.text);
-        debugPrint("Password : " + passwordController.text);
+        debugPrint("$role login clicked");
+        // Add navigation to respective login page
       },
-      child: const SizedBox(
-        width: double.infinity,
-        child: Text(
-          "Sign in",
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 20),
+      icon: const Icon(Icons.person, color: Colors.white),
+      label: Text(role),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.teal, // Use backgroundColor instead of primary
+        foregroundColor: Colors.white, // Use foregroundColor instead of onPrimary
+        minimumSize: const Size(double.infinity, 60),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
         ),
       ),
-      style: ElevatedButton.styleFrom(
-        shape: const StadiumBorder(),
-        backgroundColor: Colors.white,  // Replaces 'primary'
-        foregroundColor: Colors.blue,    // Replaces 'onPrimary'
-        padding: const EdgeInsets.symmetric(vertical: 16),
-      ),
-    );
-  }
-
-  Widget _extraText() {
-    return const Text(
-      "Can't access to your account?",
-      textAlign: TextAlign.center,
-      style: TextStyle(fontSize: 16, color: Colors.white),
     );
   }
 }

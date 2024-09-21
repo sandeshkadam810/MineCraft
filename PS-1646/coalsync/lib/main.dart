@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';  // Import your login page file
+import 'login_page.dart';  // Import your login page
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Login Page Demo',
+      debugShowCheckedModeBanner: false,  // Hide the debug banner
+      title: 'my_flutter_app',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        useMaterial3: true,  // If you're using Material 3 design
+        primarySwatch: Colors.teal,  // Use teal theme color
       ),
       home: LoginPage(),  // Set LoginPage as the home screen
     );
